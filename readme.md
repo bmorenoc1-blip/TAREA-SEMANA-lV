@@ -1,0 +1,23 @@
+
+ Información del Estudiante
+* Nombre completo: [Brandon René Moreno Contreras]
+* **Carné:** [9941-21-7965]
+* **Sección:** [Sección B]
+
+---
+
+ Explicación del Funcionamiento
+
+El programa gestiona la información de productos mediante el uso de **memoria dinámica** y **punteros**, siguiendo estos pasos lógicos:
+
+1.  **Definición de Estructuras:** Se utilizan dos `struct`. `Producto` almacena los atributos básicos (código, nombre, precio), y `Nodo` funciona como el contenedor que permite la recursividad de la lista al incluir un puntero `siguiente`.
+
+2.  **Creación y Enlace Dinámico:** Se solicitan datos para 4 productos. Por cada entrada, el programa reserva un bloque de memoria en el *heap* utilizando el operador `new`. El enlace es **manual**: el puntero `siguiente` del último nodo se apunta a la dirección de memoria del nuevo nodo creado.
+
+3.  **Recorrido de la Lista:** Para mostrar los datos y calcular el total, se utiliza un **puntero auxiliar** (`aux`). Este recorre la lista desde la `cabeza` hasta encontrar un valor `nullptr`, asegurando que el puntero original de la lista no se modifique ni se pierda la referencia inicial.
+
+
+
+4.  **Gestión Responsable de Memoria:** Al finalizar, el programa recorre nuevamente la lista para liberar cada nodo con el operador `delete`. Se utiliza un puntero `temporal` para asegurar que la dirección del siguiente nodo se preserve antes de destruir el nodo actual, evitando así fugas de memoria (*memory leaks*).
+
+---
