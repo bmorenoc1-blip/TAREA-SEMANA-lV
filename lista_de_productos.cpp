@@ -1,23 +1,18 @@
 #include <iostream>
 #include <string>
-
 using namespace std;
-
 
 struct Producto {
     int codigo;
     string nombre;
     double precio;
 };
-
-
 struct Nodo {
     Producto dato;
     Nodo* siguiente;
 };
 
 int main() {
-
     cout << "========================================" << endl;
     cout << "Estudiante: [Brandon Moreno ]" << endl;
     cout << "Sistema de Gestión de Productos (FERRETERIA)" << endl;
@@ -25,7 +20,6 @@ int main() {
 
     Nodo* cabeza = nullptr;
     Nodo* ultimo = nullptr; 
-
 
     for (int i = 0; i < 4; i++) {
       
@@ -40,10 +34,8 @@ int main() {
         cout << "Ingrese precio: ";
         cin >> nuevoNodo->dato.precio;
 
-       
         nuevoNodo->siguiente = nullptr;
 
-    
         if (cabeza == nullptr) {
             cabeza = nuevoNodo; 
             ultimo = nuevoNodo;
@@ -53,7 +45,6 @@ int main() {
         }
         cout << "----------------------------------------" << endl;
     }
-
 
     cout << "\nLISTADO DE PRODUCTOS:" << endl;
     cout << "----------------------------------------" << endl;
@@ -70,11 +61,9 @@ int main() {
         aux = aux->siguiente; 
     }
 
-
     cout << "----------------------------------------" << endl;
     cout << "TOTAL ACUMULADO: $" << totalAcumulado << endl;
     cout << "----------------------------------------" << endl;
-
 
     cout << "\nLiberando memoria..." << endl;
     while (cabeza != nullptr) {
@@ -82,8 +71,6 @@ int main() {
         cabeza = cabeza->siguiente; 
         delete temporal;            
     }
-    
     cout << "Memoria liberada exitosamente. Programa finalizado." << endl;
-
     return 0;
 }
